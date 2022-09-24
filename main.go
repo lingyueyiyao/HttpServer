@@ -1,11 +1,12 @@
 package main
 
-import (
-	"httpserver/web"
-)
+import "httpserver/http"
 
 func main() {
-	web.AddRoute("/checkstatus")
-	web.Run(":37700")
+	engine := http.NewEngine()
+	engine.AddRoute("/hello", func(ctx *http.Context){
+		ctx.Writer.Write([]byte("hello"))
+	})
+	engine.ListenAndServe(":8080")
 }
 

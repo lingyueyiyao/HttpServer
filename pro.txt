@@ -1,0 +1,2 @@
+1. 为什么不使用k8s的cluster IP？
+hafetcd不再依赖cse，使用k8s的cluster IP，hafetcd无法知道其他hafetcd节点的IP地址，所以需要使用CoreDNS。
