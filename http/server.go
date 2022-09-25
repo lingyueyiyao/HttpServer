@@ -19,7 +19,7 @@ func NewEngine() *Engine {
 
 func (e *Engine) AddRoute(url string, handler HandlerFunc) error {
 	if _, ok := e.router[url]; ok {
-		errors.New("route is exit already")
+		return errors.New("route is exit already")
 	}
 
 	e.router[url] = handler
