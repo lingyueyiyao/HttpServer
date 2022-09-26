@@ -13,8 +13,6 @@ var (
 	err error
 )
 
-
-
 func main() {
 	conf = clientv3.Config{
 		Endpoints:   []string{"localhost:2479", "localhost:2579", "localhost:2679"},
